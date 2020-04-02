@@ -20,13 +20,20 @@ body {font-family: "Lato", sans-serif}
   <div class="w3-bar w3-black w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large">Homepage</a>
-    <a href="#animal" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Our Animals</a>
+	 <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title"Animals">Animals </button>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="#animal" class="w3-bar-item w3-button">Our Animals</a>
+        <a href="#spca" class="w3-bar-item w3-button">SPCA</a>
+		  <a href="#rescues" class="w3-bar-item w3-button">Our Rescues</a>
+      </div>
+    </div>
     <a href="#driver" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Volunteer Drivers</a>
     <a href="#adopt" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Adopt Today!</a>
     <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button" title"Donate">Donate </button>     
+      <button class="w3-padding-large w3-button" title"Donate">Donate </button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="#donate" class="w3-bar-item w3-button">Donate Today!</a>
+        <a href="#donate" class="w3-bar-item w3-button">See Our Donors!</a>
         <a href="#past_donate" class="w3-bar-item w3-button">Past Donations</a>
       </div>
     </div>
@@ -41,42 +48,42 @@ body {font-family: "Lato", sans-serif}
     <img src="img/bunny1.jpg" style="width:100%">
     <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
       <h3>BUNNY</h3>
-      <p><b>BUNNYBUNNYBUNNY</b></p>   
+      <p><b>BUNNYBUNNYBUNNY</b></p>
     </div>
   </div>
   <div class="mySlides w3-display-container w3-center">
     <img src="img/dog1.jpg" style="width:100%">
     <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
       <h3>DOG</h3>
-      <p><b>DOGDOGDOG</b></p>   
+      <p><b>DOGDOGDOG</b></p>
     </div>
   </div>
   <div class="mySlides w3-display-container w3-center">
     <img src="img/cat1.jpg" style="width:100%">
     <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
       <h3>CAT</h3>
-      <p><b>CATCATCAT</b></p>   
+      <p><b>CATCATCAT</b></p>
     </div>
   </div>
   <div class="mySlides w3-display-container w3-center">
     <img src="img/gecko1.jpg" style="width:100%">
     <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
       <h3>GECKO</h3>
-      <p><b>GECKOGECKOGECKO</b></p>   
+      <p><b>GECKOGECKOGECKO</b></p>
     </div>
   </div>
   <div class="mySlides w3-display-container w3-center">
     <img src="img/dog2.jpg" style="width:100%">
     <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
       <h3>DOG2</h3>
-      <p><b>DOGDOGDOG</b></p>    
+      <p><b>DOGDOGDOG</b></p>
     </div>
   </div>
   <div class="mySlides w3-display-container w3-center">
     <img src="img/cat2.jpg" style="width:100%">
     <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
       <h3>CAT2</h3>
-      <p><b>CATCATCAT</b></p>    
+      <p><b>CATCATCAT</b></p>
     </div>
   </div>
 
@@ -89,12 +96,30 @@ body {font-family: "Lato", sans-serif}
     </div>
   </div>
 
+  <!-- Animal Section Part 2 -->
+  <div class="w3-black" id="spca">
+	 <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+		<h2 class="w3-wide">SPCA</h2>
+	 <p class="w3-justify">CISC332 WINTER 2020 GROUP ASSIGNMENT by GROUP 80</p>
+
+	 </div>
+  </div>
+
+  <!--Animal Section Part 3 -->
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="rescues">
+	 <h2 class="w3-wide">OUR RESCUES</h2>
+	 <p class="w3-justify">CISC332 WINTER 2020 GROUP ASSIGNMENT by GROUP 80</p>
+	 <div class="w3-row w3-padding-32">
+
+	 </div>
+  </div>
+
   <!-- Drivers Section -->
   <div class="w3-black" id="driver">
     <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
       <h2 class="w3-wide">DRIVERS</h2>
     <p class="w3-justify">CISC332 WINTER 2020 GROUP ASSIGNMENT by GROUP 80</p>
-	
+
     </div>
   </div>
 
@@ -106,25 +131,116 @@ body {font-family: "Lato", sans-serif}
 
     </div>
   </div>
-  
-  <!-- Donate Today Section -->
+
+  <!-- See our Donors Section -->
   <div class="w3-black" id="donate">
     <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
-      <h2 class="w3-wide">DONATE TODAY</h2>
+      <h2 class="w3-wide">SEE OUR DONORS!</h2>
     <p class="w3-justify">CISC332 WINTER 2020 GROUP ASSIGNMENT by GROUP 80</p>
-	
-    </div>
-  </div>
-  
-  <!--Past_donate Section -->
-  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="past_donate">
-    <h2 class="w3-wide">DONATION HISTORY</h2>
-    <p class="w3-justify">CISC332 WINTER 2020 GROUP ASSIGNMENT by GROUP 80</p>
-    <div class="w3-row w3-padding-32">
 
     </div>
   </div>
-  
+
+  <!--Past_donate Section -->
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="past_donate">
+    <h2 class="w3-wide">DONATION HISTORY</h2>
+    <p class="w3-justify">Donation History should only be accessed by Database Administrator.</p>
+    <p class="w3-justify">This is not a security breech, you have administrator privileges.</p>
+    <div class="w3-row w3-padding-32">
+      <!-- Make a modal in order to have a popup table of the history of donations -->
+      <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+      body {font-family: Arial, Helvetica, sans-serif;}
+      /* Modal's background */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      }
+      /* Modal's Content */
+      .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+      }
+      /* Close Button */
+      .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      </style>
+      </head>
+      <body>
+      <!-- Trigger/Open The Modal -->
+      <button id="myBtn">Admin Access</button>
+
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <!-- Add Query here to display a table of all the past donations -->
+          <p>
+            Donation Table
+            <?php
+              $dbh = new PDO('mysql:host=localhost:8080;dbname=AnimalRescue', "root", "");
+              $rows = $dbh->query("SELECT COUNT(DISTINCT A.AnimalID) AS NumAnimals FROM Animal A WHERE A.ArrivalDate BETWEEN '2018-01-01' AND '2018-12-31';");
+              foreach($rows as $row) {
+                echo "<tr><td>".$row[0]."</td><td>".$row[1]."</td><td>".$row[2]."</td></tr>";
+              }
+            ?>
+          </p>
+        </div>
+
+      </div>
+
+      <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+      // When the user clicks the button, open the modal
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+      </script>
+
+      </body>
+    </div>
+  </div>
+
   <!-- The Contact Section -->
   <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
     <h2 class="w3-wide w3-center">CONTACT</h2>
@@ -151,7 +267,7 @@ body {font-family: "Lato", sans-serif}
       </div>
     </div>
   </div>
-  
+
 <!-- End Page Content -->
 </div>
 
@@ -169,12 +285,12 @@ function carousel() {
   var i;
   var x = document.getElementsByClassName("mySlides");
   for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
+    x[i].style.display = "none";
   }
   myIndex++;
-  if (myIndex > x.length) {myIndex = 1}    
-  x[myIndex-1].style.display = "block";  
-  setTimeout(carousel, 4000);    
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 4000);
 }
 
 </script>
