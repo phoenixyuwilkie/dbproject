@@ -1,183 +1,540 @@
 <!-- CISC 332 Winter 2020 Group Assignment by Group 80 -->
 
 
-<!DOCTYPE html>
 <html lang="en">
-<title>Pet Adoption</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="stylesheets/default.css">
-<link rel="stylesheet" href="stylesheets/latofont.css">
-<link rel="stylesheet" href="stylesheets/fontawesome.css">
-<style>
-body {font-family: "Lato", sans-serif}
-.mySlides {display: none}
-</style>
-<body>
+  <head>
+    <title>Pet Adoption</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheets/default.css">
+    <link rel="stylesheet" href="stylesheets/latofont.css">
+    <link rel="stylesheet" href="stylesheets/fontawesome.css">
+    <style>
+      body {
+        font-family: "Lato", sans-serif;
+      }
 
-<!-- Navbar -->
-<div class="w3-top">
-  <div class="w3-bar w3-black w3-card">
-    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Homepage</a>
-    <a href="#animal" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Our Animals</a>
-    <a href="#driver" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Volunteer Drivers</a>
-    <a href="#adopt" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Adopt Today!</a>
-    <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button" title"Donate">Donate </button>     
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="#donate" class="w3-bar-item w3-button">Donate Today!</a>
-        <a href="#past_donate" class="w3-bar-item w3-button">Past Donations</a>
-      </div>
-    </div>
-  </div>
-</div>
+      .mySlides {
+        display: none;
+      }
 
-<!-- Page content -->
-<div class="w3-content" style="max-width:2000px;margin-top:46px">
+      /* Modal's background */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      }
 
-  <!-- Automatic Slideshow Images -->
-  <div class="mySlides w3-display-container w3-center">
-    <img src="img/bunny1.jpg" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>BUNNY</h3>
-      <p><b>BUNNYBUNNYBUNNY</b></p>   
-    </div>
-  </div>
-  <div class="mySlides w3-display-container w3-center">
-    <img src="img/dog1.jpg" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>DOG</h3>
-      <p><b>DOGDOGDOG</b></p>   
-    </div>
-  </div>
-  <div class="mySlides w3-display-container w3-center">
-    <img src="img/cat1.jpg" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>CAT</h3>
-      <p><b>CATCATCAT</b></p>   
-    </div>
-  </div>
-  <div class="mySlides w3-display-container w3-center">
-    <img src="img/gecko1.jpg" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>GECKO</h3>
-      <p><b>GECKOGECKOGECKO</b></p>   
-    </div>
-  </div>
-  <div class="mySlides w3-display-container w3-center">
-    <img src="img/dog2.jpg" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>DOG2</h3>
-      <p><b>DOGDOGDOG</b></p>    
-    </div>
-  </div>
-  <div class="mySlides w3-display-container w3-center">
-    <img src="img/cat2.jpg" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>CAT2</h3>
-      <p><b>CATCATCAT</b></p>    
-    </div>
-  </div>
+      /* Modal's Content */
+		.q1modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+      }
 
-  <!--Animal Section -->
-  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="animal">
-    <h2 class="w3-wide">ANIMALS</h2>
-    <p class="w3-justify">CISC332 WINTER 2020 GROUP ASSIGNMENT by GROUP 80</p>
-    <div class="w3-row w3-padding-32">
+		.q2modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+      }
 
-    </div>
-  </div>
+		.q3modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+      }
 
-  <!-- Drivers Section -->
-  <div class="w3-black" id="driver">
-    <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
-      <h2 class="w3-wide">DRIVERS</h2>
-    <p class="w3-justify">CISC332 WINTER 2020 GROUP ASSIGNMENT by GROUP 80</p>
-	
-    </div>
-  </div>
+		.q4modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+      }
 
-  <!--Adopt Section -->
-  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="adopt">
-    <h2 class="w3-wide">ADOPT</h2>
-    <p class="w3-justify">CISC332 WINTER 2020 GROUP ASSIGNMENT by GROUP 80</p>
-    <div class="w3-row w3-padding-32">
+      .q5modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+      }
 
-    </div>
-  </div>
-  
-  <!-- Donate Today Section -->
-  <div class="w3-black" id="donate">
-    <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
-      <h2 class="w3-wide">DONATE TODAY</h2>
-    <p class="w3-justify">CISC332 WINTER 2020 GROUP ASSIGNMENT by GROUP 80</p>
-	
-    </div>
-  </div>
-  
-  <!--Past_donate Section -->
-  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="past_donate">
-    <h2 class="w3-wide">DONATION HISTORY</h2>
-    <p class="w3-justify">CISC332 WINTER 2020 GROUP ASSIGNMENT by GROUP 80</p>
-    <div class="w3-row w3-padding-32">
+		.q6modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+      }
 
-    </div>
-  </div>
-  
-  <!-- The Contact Section -->
-  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
-    <h2 class="w3-wide w3-center">CONTACT</h2>
+      .q7modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+      }
 
-    <div class="w3-row w3-padding-32">
-      <div class="w3-col m6 w3-large w3-margin-bottom">
-        <i class="fa fa-map-marker" style="width:30px"></i> Chicago, US<br>
-        <i class="fa fa-phone" style="width:30px"></i> Phone: +00 151515<br>
-        <i class="fa fa-envelope" style="width:30px"> </i> Email: mail@mail.com<br>
-      </div>
-      <div class="w3-col m6">
-        <form action="/action_page.php" target="_blank">
-          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-            <div class="w3-half">
-              <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-            </div>
-            <div class="w3-half">
-              <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
-            </div>
+      .q8modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+      }
+      /* Close Button */
+      .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <div class="w3-top">
+      <div class="w3-bar w3-black w3-card">
+        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">Homepage</a>
+        <div class="w3-dropdown-hover w3-hide-small">
+          <button class="w3-padding-large w3-button" title"Animals">Animals </button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="#animal" class="w3-bar-item w3-button">Our Animals</a>
+            <a href="#spca" class="w3-bar-item w3-button">SPCA</a>
+            <a href="#rescues" class="w3-bar-item w3-button">Our Rescues</a>
           </div>
-          <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
-          <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
-        </form>
+        </div>
+        <a href="#driver" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Volunteer Drivers</a>
+        <a href="#adopt" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Adopt Today!</a>
+        <div class="w3-dropdown-hover w3-hide-small">
+          <button class="w3-padding-large w3-button" title"Donate">Donate </button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="#donate" class="w3-bar-item w3-button">See Our Donors!</a>
+            <a href="#past_donate" class="w3-bar-item w3-button">Past Donations</a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  
-<!-- End Page Content -->
-</div>
 
-<!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
-  <p class="w3-medium">Adapted from HTML template <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
+    <!-- Page content -->
+    <div class="w3-content" style="max-width:2000px;margin-top:46px">
+      <!-- Automatic Slideshow Images -->
+      <div class="mySlides w3-display-container w3-center">
+        <img src="img/guineapig.jpg" style="width:100%">
+        <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+          <h3>GUINEAPIG</h3>
+          <p><b>PIGPIGPIG</b></p>
+        </div>
+      </div>
+      <div class="mySlides w3-display-container w3-center">
+        <img src="img/bunny1.jpg" style="width:100%">
+        <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+          <h3>BUNNY</h3>
+          <p><b>BUNNYBUNNYBUNNY</b></p>
+        </div>
+      </div>
+      <div class="mySlides w3-display-container w3-center">
+        <img src="img/dog1.jpg" style="width:100%">
+        <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+          <h3>DOG</h3>
+          <p><b>DOGDOGDOG</b></p>
+        </div>
+      </div>
+      <div class="mySlides w3-display-container w3-center">
+        <img src="img/cat1.jpg" style="width:100%">
+        <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+          <h3>CAT</h3>
+          <p><b>CATCATCAT</b></p>
+        </div>
+      </div>
+      <div class="mySlides w3-display-container w3-center">
+        <img src="img/gecko1.jpg" style="width:100%">
+        <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+          <h3>GECKO</h3>
+          <p><b>GECKOGECKOGECKO</b></p>
+        </div>
+      </div>
+      <div class="mySlides w3-display-container w3-center">
+        <img src="img/dog2.jpg" style="width:100%">
+        <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+          <h3>DOG2</h3>
+          <p><b>DOGDOGDOG</b></p>
+        </div>
+      </div>
+      <div class="mySlides w3-display-container w3-center">
+        <img src="img/cat2.jpg" style="width:100%">
+        <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+          <h3>CAT2</h3>
+          <p><b>CATCATCAT</b></p>
+        </div>
+      </div>
 
-<script>
-// Automatic Slideshow - change image every 4 seconds
-var myIndex = 0;
-carousel();
+      <!--Animal Section -->
+      <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="animal">
+        <h2 class="w3-wide">ANIMALS</h2>
+		  <!-- TODO: MAKE inputs and MODAL -->
+		  <div class="w3-col m6">
+			 <p class="w3-justify">Display the information about all the animals <br /> currently housed in a given SPCA location.</p>
+			 <form method="get">
+				<div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+				  <div class="w3-half">
+					 <!-- INPUT for OrganizationName saved as Organization -->
+					 <input class="w3-input w3-border" type="text" placeholder="SPCAname" required name="SPCAname">
+				  </div>
+				  <!-- Hidden field adds a value to the form request to have the -->
+				  <!-- modal open once the page reloads -->
+				  <input type="hidden" name="location" value="1" />
+				</div>
+				<!-- Creates the button to send the inputs to the query-->
+				<button id="q1btn" class="w3-button w3-black w3-left">ENTER</button>
+			 </form>
+		  </div>
 
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}    
-  x[myIndex-1].style.display = "block";  
-  setTimeout(carousel, 4000);    
-}
+		  <div class="w3-col m6">
+			 <p class="w3-justify">Move an animal from one location to another (and update the information accordingly).</p>
+			 <form method="get">
+			  <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+				 <div class="w3-half">
+					<!-- INPUT for animalID saved as mAnimalID -->
+					<input class="w3-input w3-border" type="text" placeholder="AnimalID" required name="mAnimalID">
+				 </div>
+				 <div class="w3-half">
+					<!-- INPUT for destination saved as Destination -->
+					<input class="w3-input w3-border" type="text" placeholder="Destination" required name="Destination">
+				 </div>
+			  </div>
+			  <!-- Hidden field adds a value to the form request to have the -->
+			  <!-- modal open once the page reloads -->
+			  <input type="hidden" name="adopt" value="1" />
+			  <!-- Creates the button to send the inputs to the query-->
+			  <button id="q2btn" class="w3-button w3-black w3-right">ENTER</button>
+			</form>
+		  </div>
 
-</script>
 
-</body>
+
+        <div class="w3-row w3-padding-32"></div>
+      </div>
+
+      <!-- Animal Section Part 2 -->
+      <div class="w3-black" id="spca">
+        <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+          <h2 class="w3-wide">SPCA</h2>
+          <p class="w3-justify">Show the animals that went from the SPCA directly to a shelter (ie. they did not go through the rescue organization).</p>
+          <!-- Make a modal in order to have a popup table of the history of all animals that went directly to a shelter -->
+          <!-- Trigger/Open The Modal -->
+          <button id="q7btn" class="w3-button w3-white">Transfers</button>
+        </div>
+      </div>
+
+      <!--Animal Section Part 3 -->
+      <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="rescues">
+        <h2 class="w3-wide">OUR RESCUES</h2>
+        <p class="w3-justify">Show how many animals were rescued during 2018 (by any rescue organization).</p>
+        <div class="w3-row w3-padding-32">
+			 <!-- Make a modal in order to have a popup table of the history of all animals rescued in 2018 -->
+          <!-- Trigger/Open The Modal -->
+          <button id="q8btn" class="w3-button w3-black">2018 Rescues</button>
+        </div>
+      </div>
+
+      <!-- Drivers Section -->
+      <div class="w3-black" id="driver">
+        <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+          <h2 class="w3-wide">DRIVERS</h2>
+          <p class="w3-justify">Show all the information for all drivers associated with a particular rescue organization.</p>
+			 <!-- TODO: MAKE inputs and MODAL -->
+          <div class="w3-col m6">
+            <form method="get">
+              <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                <div class="w3-half">
+                  <!-- INPUT for OrganizationName saved as Organization -->
+                  <input class="w3-input w3-border" type="text" placeholder="Organization" required name="Organization">
+                </div>
+                <!-- Hidden field adds a value to the form request to have the -->
+                <!-- modal open once the page reloads -->
+                <input type="hidden" name="driverList" value="1" />
+              </div>
+              <!-- Creates the button to send the inputs to the query-->
+              <button id="q3btn" class="w3-button w3-white">ENTER</button>
+            </form>
+			 </div>
+        </div>
+      </div>
+
+      <!--Adopt Section -->
+      <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="adopt">
+        <h2 class="w3-wide">ADOPT</h2>
+        <p class="w3-justify">Allow someone to adopt a pet -- show the pets available at a selected shelter and update the information required for the adoption.  Be sure to account for any payment made to the shelter for the animal.</p>
+        <div class="w3-row w3-padding-32 w3-right"></div>
+		  <!-- TODO: MAKE inputs and MODAL -->
+		  <div class="w3-col m6 w3-right">
+			  <form method="get">
+				<div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+				  <div class="w3-half">
+					 <!-- INPUT for animalID saved as AnimalID -->
+					 <input class="w3-input w3-border" type="text" placeholder="AnimalID" required name="AnimalID">
+				  </div>
+				  <div class="w3-half">
+					 <!-- INPUT for adopter saved as Adopter -->
+					 <input class="w3-input w3-border" type="text" placeholder="Adopter" required name="Adopter">
+				  </div>
+				</div>
+				<!-- INPUT for payment saved as Payment -->
+				<input class="w3-input w3-border" type="text" placeholder="Payment" required name="Payment">
+				<!-- Hidden field adds a value to the form request to have the -->
+				<!-- modal open once the page reloads -->
+				<input type="hidden" name="adopt" value="1" />
+				<!-- Creates the button to send the inputs to the query-->
+				<button id="q6btn" class="w3-button w3-black w3-section w3-right">ENTER</button>
+			 </form>
+		  </div>
+      </div>
+
+      <!-- See our Donors Section -->
+      <div class="w3-black" id="donate">
+        <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+          <h2 class="w3-wide">SEE OUR DONORS!</h2>
+          <p class="w3-justify">For a particular donor, show which organizations they donated to and the total amount donated (over their lifetime).</p>
+          <!-- TODO: MAKE inputs and MODAL -->
+          <div class="w3-col m6">
+            <form method="get">
+              <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                <div class="w3-half">
+                  <!-- INPUT for FNAME saved as FirstName -->
+                  <input class="w3-input w3-border" type="text" placeholder="FirstName" required name="FirstName">
+                </div>
+                <div class="w3-half">
+                  <!-- INPUT for LNAME saved as LastName -->
+                  <input class="w3-input w3-border" type="text" placeholder="LastName" required name="LastName">
+                </div>
+                <!-- Hidden field adds a value to the form request to have the -->
+                <!-- modal open once the page reloads -->
+                <input type="hidden" name="donorsHist" value="1" />
+              </div>
+              <!-- Creates the button to send the inputs to the query-->
+              <button id="q4btn" class="w3-button w3-white">ENTER</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!--Past_donate Section -->
+      <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="past_donate">
+        <h2 class="w3-wide">DONATION HISTORY</h2>
+        <p class="w3-justify">Show the total amount donated for 2018 to a selected organization.</p>
+        <div class="w3-row w3-padding-32">
+          <!-- Trigger/Open The Modal -->
+          <button id="q5btn" class="w3-button w3-black">2018 Donations</button>
+        </div>
+      </div>
+    </div>
+
+	 <!-- Modal content for all sections -->
+	 <div id="q1modal" class="modal">
+      <!-- Modal content -->
+      <div class="q1modal-content">
+        <span id="closeq1" class="close">&times;</span>
+        <!-- Add Query here to display a table of all the past donations -->
+        <p>Driver Table</p>
+        <!-- TODO: ADD PHP PDO Query -->
+        <!-- <?php $givenName = $_POST["FirstName"];?> -->
+        <!-- <?php $surname = $_POST["LastName"];?> -->
+        <!-- <?php echo "<h3>Donor name is $givenName $surname</h3>";?> -->
+      </div>
+    </div>
+
+	 <div id="q2modal" class="modal">
+		 <!-- Modal content -->
+		 <div class="q2modal-content">
+			<span id="closeq2" class="close">&times;</span>
+			<!-- Add Query here to display a table of all the past donations -->
+			<p>Driver Table</p>
+			<!-- TODO: ADD PHP PDO Query -->
+			<!-- <?php $givenName = $_POST["FirstName"];?> -->
+			<!-- <?php $surname = $_POST["LastName"];?> -->
+			<!-- <?php echo "<h3>Donor name is $givenName $surname</h3>";?> -->
+		 </div>
+	  </div>
+
+	 <div id="q3modal" class="modal">
+      <!-- Modal content -->
+      <div class="q3modal-content">
+        <span id="closeq3" class="close">&times;</span>
+        <!-- Add Query here to display a table of all the past donations -->
+        <p>Driver Table</p>
+        <!-- TODO: ADD PHP PDO Query -->
+        <!-- <?php $givenName = $_POST["FirstName"];?> -->
+        <!-- <?php $surname = $_POST["LastName"];?> -->
+        <!-- <?php echo "<h3>Donor name is $givenName $surname</h3>";?> -->
+      </div>
+    </div>
+
+	 <div id="q4modal" class="modal">
+      <!-- Modal content -->
+      <div class="q4modal-content">
+        <span id="closeq4" class="close">&times;</span>
+        <!-- Add Query here to display a table of all the past donations -->
+        <p>Donor History Table</p>
+        <!-- TODO: ADD PHP PDO Query -->
+        <!-- <?php $givenName = $_POST["FirstName"];?> -->
+        <!-- <?php $surname = $_POST["LastName"];?> -->
+        <!-- <?php echo "<h3>Donor name is $givenName $surname</h3>";?> -->
+      </div>
+    </div>
+
+    <div id="q5modal" class="modal">
+      <!-- Modal content -->
+      <div class="q5modal-content">
+        <span id="closeq5" class="close">&times;</span>
+        <!-- Add Query here to display a table of all the past donations -->
+        <p>Donation Table</p>
+        <!-- TODO: ADD PHP PDO Query -->
+      </div>
+    </div>
+
+	 <div id="q6modal" class="modal">
+      <!-- Modal content -->
+      <div class="q6modal-content">
+        <span id="closeq6" class="close">&times;</span>
+        <!-- Add Query here to display a table of all the past donations -->
+        <p>Adoption Table</p>
+        <!-- TODO: ADD PHP PDO Query -->
+      </div>
+    </div>
+
+    <div id="q7modal" class="modal">
+      <!-- Modal content -->
+      <div class="q7modal-content">
+        <span id="closeq7" class="close">&times;</span>
+        <!-- Add Query here to display a table of all the past donations -->
+        <p>SPCA directly to shelter</p>
+        <!-- TODO: ADD PHP PDO Query -->
+      </div>
+    </div>
+
+    <div id="q8modal" class="modal">
+      <!-- Modal content -->
+      <div class="q8modal-content">
+        <span id="closeq8" class="close">&times;</span>
+        <!-- Add Query here to display a table of all the past donations -->
+        <p>All animals rescued in 2018</p>
+        <!-- TODO: ADD PHP PDO Query -->
+      </div>
+    </div>
+    <!-- End Page Content -->
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+      <p class="w3-medium">CISC332 Database Management Systems: Final Project by Group 80<br />Liu, Tong 06236306<br />Y. Wilkie, Phoenix 20010872</p>
+    </footer>
+
+	 <!-- Javascript for the modal setup -->
+    <script>
+      function modalSetup(id) {
+        // Get the modal
+        var modal = document.getElementById(id + "modal");
+        // Get the button that opens the modal
+        var btn = document.getElementById(id + "btn");
+        // Get the <span> element that closes the modal
+        var span = document.getElementById("close" + id);
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+      }
+
+      // setup multiple modals with click handlers
+		modalSetup("q1");
+		modalSetup("q2");
+		modalSetup("q3");
+      modalSetup("q4");
+      modalSetup("q5");
+		modalSetup("q6");
+      modalSetup("q7");
+      modalSetup("q8");
+
+      // When the user clicks anywhere outside of any modal, close it
+      window.onclick = function(event) {
+        if (event.target.id.includes("modal")) {
+          event.target.style.display = "none";
+        }
+      }
+
+		// open modal for q1 on page load if form request was previously made
+      if (window.location.search.includes("location=1")) {
+        var modal = document.getElementById("q1modal");
+        modal.style.display = "block";
+      }
+
+		// open modal for q2 on page load if form request was previously made
+      if (window.location.search.includes("move=1")) {
+        var modal = document.getElementById("q2modal");
+        modal.style.display = "block";
+      }
+
+		// open modal for q3 on page load if form request was previously made
+      if (window.location.search.includes("driverList=1")) {
+        var modal = document.getElementById("q3modal");
+        modal.style.display = "block";
+      }
+
+      // open modal for q4 on page load if form request was previously made
+      if (window.location.search.includes("donorsHist=1")) {
+        var modal = document.getElementById("q4modal");
+        modal.style.display = "block";
+      }
+
+		// open modal for q6 on page load if form request was previously made
+      if (window.location.search.includes("adopt=1")) {
+        var modal = document.getElementById("q6modal");
+        modal.style.display = "block";
+      }
+
+      // Automatic Slideshow - change image every 4 seconds
+      var myIndex = 0;
+      carousel();
+
+      function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) {
+          myIndex = 1
+        }
+        x[myIndex - 1].style.display = "block";
+        setTimeout(carousel, 4000);
+      }
+    </script>
+  </body>
 </html>
